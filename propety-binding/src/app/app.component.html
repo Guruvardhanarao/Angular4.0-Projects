@@ -1,0 +1,26 @@
+<h1>{{profileTitle}}</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Father Name</th>
+      <th>Qualification</th>
+      <th>Age</th>
+      <th>Sex</th> 
+      <th>Pic</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr>
+        <td>{{profileObj[0].name}}</td>
+        <td>{{profileObj[0].fatherName}}</td>
+        <td>{{profileObj[0].education}}</td>
+        <td>{{profileObj[0].age}}</td>
+        <td>{{profileObj[0].sex}}</td>
+        <td><img [src]="profileObj[0].profilePic" width="50" height="50"/></td>
+      </tr>
+    </tbody>
+    
+  
+</table>
