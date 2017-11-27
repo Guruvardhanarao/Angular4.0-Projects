@@ -27,4 +27,18 @@ export class EmployeeService {
     return this.employeeList;
   }
 
+  updateForm(empdata: Employee) {
+    this.employeeList.update(empdata.$key, {
+      name: empdata.name,
+      position: empdata.position,
+      salary: empdata.salary,
+      office: empdata.office
+
+    })
+  }
+
+  deleteEmployee(key) {
+    this.employeeList.remove(key);
+  }
+
 }

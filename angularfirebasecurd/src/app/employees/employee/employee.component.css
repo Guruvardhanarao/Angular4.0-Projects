@@ -3,3 +3,7 @@
     padding: 50px;
     color: rgb(15, 6, 51);
 }
+
+input.ng-invalid.ng-dirty {
+    border: 1px solid red;
+}
