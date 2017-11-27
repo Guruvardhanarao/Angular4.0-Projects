@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="">
+        <h3>Give Your Feed Back</h3>
+      </div>
+      <div class="">
+        <form novalidate [formGroup]= "feedbackForm" (ngSubmit)="onSubmit()">
+          <p>{{feedbackForm.value | json}} {{feedbackForm.status | json}}</p>
+
+           <p>
+             <mat-form-field dividerColor="{{formErrors.firstname ? 'warn' : 'primary'}}">
+               <input type="text" matInput placeholder="First name" formControlName="firstname" required />
+               <mat-hint>
+                 <span [hidden]="!(formErrors.firstname)">{{formErrors.firstname}}</span>
+               </mat-hint>
+             </mat-form-field>
+           
+             <mat-form-field dividerColor="{{formErrors.lastname ? 'warn' : 'primary'}}">
+              <input type="text" matInput placeholder="Last name" formControlName="lastname" required />
+              <mat-hint>
+              <span [hidden]="!(formErrors.lastname)">{{formErrors.lastname}}</span>
+              </mat-hint>
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-form-field dividerColor="{{formErrors.telnum ? 'warn' : 'primary'}}">
+              <input type="tel" matInput placeholder="Tel. No" formControlName="telnum" pattern="[0-9]*" required />
+              <mat-hint>
+              <span [hidden]="!(formErrors.telnum)">{{formErrors.telnum}}</span>
+              </mat-hint>
+            </mat-form-field>
+        
+            <mat-form-field dividerColor="{{formErrors.email ? 'warn' : 'primary'}}">
+              <input type="email" matInput placeholder="Email" formControlName="email" email required />
+              <mat-hint>
+              <span [hidden]="!(formErrors.email)">{{formErrors.email}}</span>
+            </mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+              <mat-slide-toggle formControlName="agree">may we contact you?</mat-slide-toggle>
+            <mat-form-field>
+              <mat-select placeholder="How?" formControlName="contacttype">
+                <mat-option *ngFor="let ctype of ContactType" [value]="ctype">
+                  {{ ctype }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <textarea matInput rows="5" formControlName="message" placeholder="Enter your feed back..">
+              </textarea>
+            </mat-form-field>
+          </p>
+          <p>
+              <button type="submit" mat-button class="background-primary">
+                submit
+              </button>
+         </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

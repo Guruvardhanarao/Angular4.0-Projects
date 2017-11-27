@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row" style="margin-top:40px;">
+    <div class="col-sm-12">
+      <h1>Menu</h1>
+      <hr />
+    </div>
+  </div>
+  <div class="row" *ngIf="Dishes" style="margin-bottom:70px" [@expand]>
+    <div class="col-sm-4" *ngFor="let dish of Dishes" [routerLink]='["/dishdetail", dish.id]'>
+      <mat-card appHighlight>
+        <mat-card-title>{{dish.name | uppercase}}</mat-card-title>
+        <img mat-card-image src="{{BaseURL + dish.image}}" />
+      </mat-card>
+    </div>
+  </div>
+
+  <div [hidden] = "Dishes || errMess">
+    <mat-spinner></mat-spinner><span>Loading... pls wait...</span>
+  </div>
+
+  <div *ngIf="errMess">
+      <div class="alert alert-danger" role="alert">
+        <mat-card>
+          <mat-card-title>
+            <h2>Error:</h2>
+          </mat-card-title>
+          <mat-card-content>
+            <h4>{{errMess}}</h4>
+          </mat-card-content>
+        </mat-card>
+     </div>
+  </div>
+       
+</div>

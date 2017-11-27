@@ -1,0 +1,97 @@
+<div class="container">
+  <div *ngIf="item" [@visibility]="visibility">
+    <div class="row" [@expand]>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-card-title>{{item.name | uppercase}}</mat-card-title>
+          <img mat-card-image src="{{BaseURL + item.image}}" />
+          <button mat-button [routerLink]= "['/dishdetail', prev]"><span class="fa fa-chevron-left"></span></button>
+          <button mat-button [routerLink] = "['/dishdetail', next]"><span class="fa fa-chevron-right"></span></button>
+          <button mat-button (click)="goBack()">back</button>
+          <button mat-button>like</button>
+          <button mat-button>share</button>
+          
+        </mat-card>
+      </div>
+      <div class="col-md-6" [@visibility]="visibility">
+        <h3>comments:</h3>
+        <mat-card>
+          <mat-list>
+            <mat-card *ngFor="let comment of item.comments">
+              <mat-list-item>{{comment.comment}}</mat-list-item>
+              <mat-list-item>{{comment.rating}} stars</mat-list-item>
+              <mat-list-item>- - {{comment.author}} {{comment.date | date}}</mat-list-item>
+            </mat-card>
+            
+          </mat-list>
+
+          <mat-list *ngFor="let comnt of comments">
+            <mat-card>
+              
+                <mat-list-item>{{comnt.comment}}</mat-list-item>
+                <mat-list-item>{{comnt.rating}} Stars</mat-list-item>
+                <mat-list-item>- - {{comnt.author}} {{comnt.date | date}}</mat-list-item>
+              
+            </mat-card>
+          </mat-list>
+
+        </mat-card>
+        
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Enter your comments here</h3>
+
+        <form novalidate [formGroup]= "commentForm" (ngSubmit)="clearFormData(commentForm)">
+            <p>
+            <mat-form-field dividerColor="{{formErrors.author ? 'warn' : 'primary'}}">
+              <input type="text" matInput placeholder="Name" formControlName="author" [(ngModel)]="author" required />
+              <mat-hint>
+                <span [hidden]="!(formErrors.author)">{{formErrors.author}}</span>
+              </mat-hint>
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-slider min="1" max="5" thumbLabel step="1" tickInterval="1" value="5"></mat-slider>
+            </p>
+            <p>
+            <mat-form-field dividerColor="{{formErrors.comment ? 'warn' : 'primary'}}">
+              <textarea matInput rows="5" formControlName="comment" [(ngModel)]="comment" placeholder="Enter your comment..">
+              </textarea>
+              <mat-hint>
+                  <span [hidden]="!(formErrors.comment)">{{formErrors.comment}}</span>
+                </mat-hint>
+            </mat-form-field>
+            </p>
+            <p>
+                <button type="submit" mat-raised-button color="primary" 
+                        [disabled]="commentForm.invalid">
+                  submit
+                </button>
+          </p>
+          </form>
+      </div>
+
+      <div class="col-sm-6">
+        <mat-list *ngIf="author || comment">
+          <mat-card>
+            <mat-list>
+              <mat-list-item>{{author}}</mat-list-item>
+              <mat-list-item>{{comment}}</mat-list-item>
+            </mat-list>
+          </mat-card>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="errMess">
+    <div class="alert alert-danger" role="alert">
+      <h2>Error:</h2>
+      <h5>{{errMess}}</h5>
+    </div>
+  </div>
+</div>

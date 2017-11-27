@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Home Taste </a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a mat-button class="nav-link" routerLink="/home" routerLinkActive="active">Home </a>
+        </li>
+        <li class="nav-item">
+          <a mat-button class="nav-link" routerLink="/aboutus" routerLinkActive="active">About </a>
+        </li>
+        <li class="nav-item">
+          <a mat-button class="nav-link" routerLink="/menu"  routerLinkActive="active">Menu </a>
+        </li>
+        <li class="nav-item">
+          <a mat-button class="nav-link" routerLink="/contactus"  routerLinkActive="active">Contact </a>
+        </li>
+        
+      </ul>
+
+      <a mat-button class="nav-link" (click)="openLoginForm()">
+        <span class="fa fa-sign-in fa-lg"></span>
+         Login
+      </a>
+      
+    </div>
+</nav>
+
+
+<div class="jumbotron">
+  <h1 class="display-3">Welcome to Home Taste</h1>
+  <p class="lead">We are the foodees, we love to eat delicious food. So we started Home Taste for food lovers like us. We believe in Home taste that is the first step where we starts eating food.</p>
+  <hr class="my-4">
+  <p>we are a group of people and also best friends...</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Know about us</a>
+  </p>
+</div>

@@ -1,0 +1,19 @@
+.head-sec {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin: 50px 0;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.addEmpCard {
+    display: flex;
+    justify-content: center;
+}

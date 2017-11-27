@@ -1,0 +1,22 @@
+
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+
+  <div fxFlex>
+    <h3>Menu</h3>
+    <hr>
+  </div>
+
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px" >
+        <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
+          <img src="{{dish.image}}" height="200px" width="100%" />
+          <mat-grid-tile-footer>{{dish.name | uppercase}}</mat-grid-tile-footer>
+        </mat-grid-tile>
+        
+    </mat-grid-list>
+  </div>
+  <app-dishdetails [dishItem]="selectedDish"></app-dishdetails>
+</div>

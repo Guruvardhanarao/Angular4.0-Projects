@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div  *ngIf="dishFeatured">
+        <h3>Featured Dish</h3>
+        <mat-card [@expand]>
+          <mat-card-title><h6>{{dishFeatured.name | uppercase}}</h6></mat-card-title>
+          <img mat-card-image src="{{BaseURL + dishFeatured.image}}" />
+          <mat-card-content>
+            <p>{{dishFeatured.description}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div *ngIf="disErrMess">
+        <div class="alert alert-danger" role="alert">
+          <mat-card>
+            <mat-card-title>
+              <h2>Error:</h2>
+            </mat-card-title>
+            <mat-card-content>
+              <h4>{{disErrMess}}</h4>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div *ngIf="promotionItems">
+        <h3>Promotional Dish</h3>
+          <mat-card *ngFor="let promoItem of promotionItems"  [@expand]>
+              <mat-card-title><h6>{{promoItem.name | uppercase}}</h6></mat-card-title>
+              <img mat-card-image src="{{BaseURL + promoItem.image}}" />
+              <mat-card-content>
+                <p>{{promoItem.description}}</p>
+              </mat-card-content>
+          </mat-card>
+      </div>
+
+      <div [hidden]="promotionItems || promoErrMess">
+        <mat-spinner></mat-spinner><p>loading pls wait...</p>
+      </div>
+
+      <div *ngIf="promoErrMess">
+          <div class="alert alert-danger" role="alert">
+            <mat-card>
+              <mat-card-title>
+                <h2>Error:</h2>
+              </mat-card-title>
+              <mat-card-content>
+                <h4>{{promoErrMess}}</h4>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>      
+
+    </div>
+
+    <div class="col-sm-4">
+      <div *ngIf="leader">
+        <mat-card *ngIf="leader"  [@expand]>
+            <mat-card-title><h6>{{leader.name | uppercase}}</h6></mat-card-title>
+            <img mat-card-image src="{{BaseURL + leader.image}}" />
+            <mat-card-content>
+              <mat-card-subtitle>{{leader.designation}}</mat-card-subtitle>
+              <p style="font-size:12px;">{{leader.description}}</p>            
+            </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div [hidden]="leader || leaderErrMess">
+          <mat-spinner></mat-spinner><p>loading pls wait...</p>
+      </div>
+
+      <div *ngIf="leaderErrMess">
+        <div class="alert alert-danger" role="alert">
+          <h2>Error:</h2>
+          <h4>{{leaderErrMess}}</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.contact {
+    background-image: url('../../assets/contact.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    color: #01579B;
+    font-size: 30px;
+}
+
+h1 {
+    border: 2px solid #FFCCBC;
+    padding: 10px;
+}
