@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">{{title}}</h1>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <label>Enter Employee ID: </label>
+                  <input type="text" name="empId" class="form-control" [(ngModel)]="empId" placeholder="Emp Id here" />
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="getEmpRecord()">Submit</button>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+          <div class="card" *ngIf="empObj">
+            <div class="card-header">
+                {{empObj.name}}
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-dark table-responsive-xl">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Department</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{empObj.id}}</th>
+                        <td>{{empObj.name}}</td>
+                        <td>{{empObj.position}}</td>
+                        <td>{{empObj.salary}}</td>
+                        <td>{{empObj.department}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+              
+            </div>
+          </div>
+          
+          <div class="alert alert-warning alert-dismissible fade show" role="alert" [hidden]="!employeeExists">
+              No Records Found!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
