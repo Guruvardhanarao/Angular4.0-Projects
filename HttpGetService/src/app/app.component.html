@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="alert alert-info text-center"><h1>{{title}}</h1></div>
+  <div class="row">
+    <div class="col-sm-12 col-md-3">
+      <div class="alert alert-dark">
+        <div class="form-group">
+          <label>Select your Country: </label>
+          <select class="form-control" [(ngModel)]="selectedCountry">
+            <option *ngFor="let country of countriesObj" value="{{country.name}}">{{country.name}}</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="button" value="Get Contry Details" (click)="getCountryDetails()">Get Contry Details</button>
+      </div>
+      </div>
+    <div class="col-sm-12 col-md-9"  *ngIf="countryObj">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Capital</th>
+                <th>Currency</th>
+                <th>Alpha3 Code</th>
+                <th>Language</th>
+                <th>Population</th>
+                <th>Region</th>
+                <th>Flag Img</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{countryObj.name}}</td>
+                <td>{{countryObj.capital}}</td>
+                <td>{{countryObj.currencies[0].name}}</td>
+                <td>{{countryObj.alpha3Code}}</td>
+                <td>{{countryObj.languages[0].name}}</td>
+                <td>{{countryObj.population}}</td>
+                <td>{{countryObj.region}}</td>
+                <td><img src="{{countryObj.flag}}" width="50" height="50"></td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
