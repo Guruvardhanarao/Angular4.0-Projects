@@ -1,0 +1,10 @@
+.bg-header {
+    background-color: blueviolet;
+    color: #fff;
+}
+
+.alert-success {
+    background-color: rgb(181, 124, 235);
+    color: rgb(24, 3, 43);
+}
+
