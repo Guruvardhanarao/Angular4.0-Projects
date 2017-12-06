@@ -1,0 +1,20 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empList let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{emp.eName}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="getEmpFullDetails(emp)">Know More</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

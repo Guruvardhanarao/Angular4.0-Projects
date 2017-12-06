@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="alert alert-primary">
+    <h1>{{title}}</h1>
+  </div>
+
+  <app-emp-data [eCompany]="company" [edata]="empData"></app-emp-data>
+  <div class="card">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Position</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Department</th>
+          <th scope="col">Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empData let i=index">
+          <th scope="row">{{i+101}}</th>
+          <td>{{emp.name}}</td>
+          <td>{{emp.position}}</td>
+          <td>{{emp.salary}}</td>
+          <td>{{emp.department}}</td>
+          <td>
+            <button class="btn btn-primary">Company</button>
+            <p></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+</div>
