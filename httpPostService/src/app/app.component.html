@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="alert alert-dark">
+    <h1 class="text-center">{{title}}</h1>
+  </div>
+  <div class="alert alert-success alert-dismissible fade show" role="alert"  *ngIf="profileObj">
+       Profile posted success!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <div class="row">
+    
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="pName">Profile Name</label>
+              <input type="text" class="form-control" id="pName" aria-describedby="pName"
+                 name="pName" placeholder="Profile name" [(ngModel)]="tempObj.name">
+            </div>
+            <div class="form-group">
+              <label for="pJob">Job</label>
+              <input type="text" class="form-control" id="pJob" placeholder="job"
+              name="pJob" [(ngModel)]="tempObj.job">
+            </div>
+            <div class="form-group">
+              <label for="pSalary">Salary</label>
+              <input type="number" class="form-control" id="pSalary" placeholder="salary"
+                name="pSalary" [(ngModel)]="tempObj.salary">
+            </div>
+            <button class="btn btn-info" (click)="sendProfile()">Save Profile</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6" *ngIf="profileObj">
+      <div class="card">
+        <div class="card-body">
+          <h4>User name:<span>{{profileObj.name}}</span></h4>
+          <h4>User job:<span>{{profileObj.job}}</span></h4>
+          <h4>User salary:<span>{{profileObj.salary}}</span></h4>
+          <h4>User id:<span>{{profileObj.id}}</span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+</div>
