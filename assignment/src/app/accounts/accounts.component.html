@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row mainbody">
+    <div class="col-1 mainbodyL">
+        <div class="sidenav">
+            <div class="sidenav-top">
+            <div>
+                <a href="#"><i class="fa fa-dashboard"></i></a>
+            </div>
+            <div>
+                <a href="#"><i class="fa fa-exchange"></i></a>
+            </div>
+            <div>
+                <a href="#"><i class="fa fa-external-link-square"></i></a>
+            </div>
+            <div>
+                <a href="#"><i class="fa fa-window-maximize"></i></a>
+            </div>
+            <div>
+                <a href="#"><i class="fa fa-cog"></i></a>
+                </div>
+            </div>
+        
+            <div class="sidenav-bottom">
+            <div>
+                <a href="#"><i class="fa fa-list"></i></a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-11 mainbodyR">
+        <div class="accDetail" *ngIf="selectedAcc">
+            <div class="accDetail1">
+            <div>
+                {{selectedAcc.shortcode}} <span style="font-size:28px; font-weight:600">{{selectedAcc.balance}}</span>
+                <p>{{selectedAcc.revenue | currency:'USD': true}} <span style="color: green">{{selectedAcc.percIncr | percent}}</span></p>
+            </div>
+            </div>
+            <div class="accDetail2">
+                <div class="operations">
+                  <i class="fa fa-arrow-up"></i>
+                  <p>sell</p>
+                </div>
+                <div class="operations">
+                  <i class="fa fa-arrow-down"></i>
+                  <p>buy</p>
+                </div>
+                <div class="operations">
+                  <i class="fa fa-shopping-cart"></i>
+                  <p>order</p>
+                </div>
+            </div>
+            <div class="accDetail3">
+                <p>your today revenue</p>
+                <h4>+ {{selectedAcc.revenue | currency:'USD': true}}</h4>
+                <P><img src="../../assets/images/curve.png"> + {{selectedAcc.percIncr | percent}}</P>
+            </div>
+            <div class="accDetail4">
+                <p>your current order volume</p>
+                <h4>+ {{selectedAcc.currentOrder | currency:'USD': true}}</h4>
+                <P><img src="../../assets/images/curve.png"> + {{selectedAcc.percIncr | percent}}</P>
+            </div>
+
+        </div>
+
+
+        <div class="accDetail" [hidden]="selectedAcc">
+                <div class="accDetail1">
+                <div>
+                    {{myAccounts[0].shortcode}} <span style="font-size:28px; font-weight:600">{{myAccounts[0].balance}}</span>
+                    <p>{{myAccounts[0].revenue | currency:'USD': true}} <span style="color: green">{{myAccounts[0].percIncr | percent}}</span></p>
+                </div>
+                </div>
+                <div class="accDetail2">
+                    <div class="operations">
+                      <i class="fa fa-arrow-up"></i>
+                      <p>sell</p>
+                    </div>
+                    <div class="operations">
+                      <i class="fa fa-arrow-down"></i>
+                      <p>buy</p>
+                    </div>
+                    <div class="operations">
+                      <i class="fa fa-shopping-cart"></i>
+                      <p>order</p>
+                    </div>
+                </div>
+                <div class="accDetail3">
+                    <p>your today revenue</p>
+                    <h4>+ {{myAccounts[0].revenue | currency:'USD': true}}</h4>
+                    <P><img src="../../assets/images/curve.png"> + {{myAccounts[0].percIncr | percent}}</P>
+                </div>
+                <div class="accDetail4">
+                    <p>your current order volume</p>
+                    <h4>+ {{myAccounts[0].currentOrder | currency:'USD': true}}</h4>
+                    <P><img src="../../assets/images/curve.png"> + {{myAccounts[0].percIncr | percent}}</P>
+                </div>
+    
+            </div>
+
+
+
+
+        <div class="accNav">
+            <div class="accCards">
+                <div class="card" *ngFor="let acc of myAccounts let i=index" (click)="sendDetails(acc)">
+                    <div class="card-body">
+                        <h5 class="card-title">{{acc.accName}}</h5>
+                        <p>Mflv  <i class="fa fa-ellipsis-h"></i> <i class="fa fa-ellipsis-h"></i> <i class="fa fa-ellipsis-h"></i> <i class="fa fa-ellipsis-h"></i></p>
+                        <div class="accCard-footer">
+                            <h6>{{acc.accName}}/USD</h6>
+                            <p>{{acc.accHolder}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
+
+<div class="container chartPart">
+        <p style="float:right"><button >Year</button><button (click)="getMonth()">Month</button><button (click)="getWeek()">Week</button><button (click)="getDay()">Day</button></p>
+        <div id="line_top_x"  style="width: 900px; height: 400px"></div>
+        
+      
+</div>

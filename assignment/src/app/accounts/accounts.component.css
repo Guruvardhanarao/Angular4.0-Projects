@@ -1,0 +1,124 @@
+.mainbody {
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.mainbodyL {
+    min-height: 300px;
+    background-color: #071c77;
+    display: flex;
+    justify-content: center;
+}
+
+.mainbodyR {
+    min-height: 300px;
+    display: flex;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidenav-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50%;
+    margin-top: 50px;
+    color: #dbd3d3;
+    
+}
+
+.sidenav-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 30%;
+    min-width: 20px;
+    color: #dbd3d3;
+}
+
+.accDetail {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.accNav {
+    min-width: 60%;
+}
+
+.accDetail1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.accDetail2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-width: 55%;
+}
+
+.accDetail3 {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    min-width: 45%;
+}
+
+
+.accDetail4 {
+    display: flex;
+    flex-flow:column wrap;
+    justify-content: flex-start;
+    min-width: 45%;
+}
+
+
+.operations {
+    min-width: 27%;
+    max-height: 50px;
+    background-color: rgb(212, 209, 209);
+    margin: 5px;
+    padding: 5px;
+}
+
+.accCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    height: 200px;
+}
+
+.card {
+    display: flex;
+    background-color: blue;
+    height: 150px;
+    min-width: 48%;
+    justify-content: space-around;
+    margin: 5px;
+    color: #f4f4f4;
+
+}
+
+
+.card:hover{
+    transform: skew(5deg, 2deg);
+    cursor: pointer;
+}
+
+.accCard-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chartPart {
+    min-height: 500px;
+    background-color: #f4f4f4;
+}

@@ -1,0 +1,126 @@
+.mainHeader {
+    display: flex;
+    min-height: 30px;
+    justify-content: center;
+}
+
+.mainbg {
+    background-color:#e9e7e7; 
+}
+
+.headerin {
+    display: flex;
+    justify-content: center;
+}
+.headerLeft {
+    min-height: 20px;
+}
+
+.headerMiddle {
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    border-left: 1px solid #f4f4f4;
+    
+}
+
+.headerRight {
+    min-height: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.profImg {
+    background-image: url('../../assets/images/ntr.jpg');
+    background-repeat: no-repeat;
+    height: 100px;
+    position: relative;
+}
+
+.bluepart{
+    min-height: 20px;
+    min-width: 20px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 7px 15px;
+    color: #fff;
+}
+
+.headertext{
+    display: flex;
+
+}
+
+.headertext h1 {
+    font-size: 26px;
+    font-family: 'Crimson Text', serif;
+    color: rgb(78, 78, 78);
+}
+
+.headerRight ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.headerRight ul li {
+    display: inline;
+    margin-right: 20px;
+
+}
+
+.headerRight ul li a{
+    text-decoration: none;
+    color: gray;
+}
+
+.subHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.subHeaderL{
+    display: flex;
+    align-content: center;
+}
+
+.bal {
+    font-size: 23px;
+    font-weight: 600;
+    margin-left: 120px;
+}
+
+.subHeaderR {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+
+.subHeaderL h1 {
+    font-size: 22px; 
+}
+
+.myAcc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 20px;
+    max-width: 50%;
+    min-width: 40%;
+}
+
+.noAcc {
+    display: flex;
+    min-height: 20px;
+    min-width: 40%;
+    max-width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+

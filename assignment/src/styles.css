@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Crimson Text', serif;
+    
+}
+
+@media only screen and (max-width: 360px) {
+    .accDetail {
+        width: 100%;
+    }
+}
