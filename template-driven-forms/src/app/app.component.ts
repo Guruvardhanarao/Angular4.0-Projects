@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  firstname: string = "ganesha";
+
+  public formSubmit(data: any): void {
+    console.log("data", data);
+  }
 }
