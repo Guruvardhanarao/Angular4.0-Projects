@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
   countriesObj: any;
   countryObj: any;
   selectedCountry: string;
+
+  
   constructor(private countriesService: CountriesService){}
 
   ngOnInit() {
