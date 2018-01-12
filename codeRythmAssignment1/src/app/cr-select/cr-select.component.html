@@ -1,0 +1,48 @@
+<div class="alert alert-danger">
+  <div class="row">
+    <div class="col-6">
+      <p>Selected User: {{selectedUser ? selectedUser.name : 'none'}}</p>
+      <p-dropdown [options]="ArrayUsers" [(ngModel)]="selectedUser" placeholder="using array" optionLabel="name"></p-dropdown>
+    </div> 
+    <div class="col-6" *ngIf="selectedUser">
+      <div class="card text-center">
+        <h5>You Selected Array based User</h5>
+        <p>User Name: {{selectedUser.name}}</p>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<div class="alert alert-success">
+  <div class="row">
+    <div class="col-6">
+      <p>Selected User: {{selectedCurrentUser ? selectedCurrentUser.name : 'none'}}</p>
+      <p-dropdown  [options]="LocalUsers" [(ngModel)]="selectedCurrentUser" placeholder="local Storage" optionLabel="name"></p-dropdown>
+    </div>
+    <div class="col-6" *ngIf="selectedCurrentUser">
+      <div class="card text-center">
+        <h5>You Selected LocalStorage based User</h5>
+        <p>User Name: {{selectedCurrentUser.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-info">
+    <div class="row">
+      <div class="col-6">
+        <p>Selected User: {{selectedfbUser ? selectedfbUser : 'none'}}</p>
+        <select  class="custom-select" [(ngModel)]="selectedfbUser">
+          <option>Through Ajax</option>
+          <option *ngFor="let user of AjaxUsers">{{user.name}}</option>
+        </select>
+      </div>
+      <div class="col-6" *ngIf="selectedfbUser">
+          <div class="card text-center">
+            <h5>You Selected Ajax based User</h5>
+            <p>User Name: {{selectedfbUser}}</p>
+          </div>
+        </div>
+    </div>
+  
+</div>
